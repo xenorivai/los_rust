@@ -1,5 +1,6 @@
 #include "fb.h"
 #include "serial_port.h"
+#include "memory.h"
 
 #define SERIAL_COM1_PORT 0x3F8
 
@@ -23,6 +24,10 @@ int main(){
     if (serial_is_transmit_fifo_empty(SERIAL_COM1_PORT)!=0){
         outb(SERIAL_COM1_PORT, 'A');
     }
+
+    struct gdt G;
+    load_gdt(&G);
+
 
     return 0;
 }
