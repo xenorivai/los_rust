@@ -1,0 +1,4 @@
+bochlog.txt
+*.out
+*.o
+.vscode
